@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonnement Petflix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="netflix-header">
+        <div class="logo-container">
+            <h1 class="netflix-logo-text"><span class="logo-p">P</span>etflix</h1>
+        </div>
+    </header>
+    <div id="container">
+        <h1 id="title">Pet<span>Flix</span></h1>
+        <p id="description">Abonnez-vous à Petflix et commencez à regarder dès maintenant pour <span>seulement 2 €</span> par mois !</p>
+
+        <form action="confirmation.html" id="subscription-form" method="POST" name="form">
+
+            <div class="box">
+                <label for="full-name" id="name-label">Nom complet</label><br>
+                <input type="text" id="full-name" name="full-name" placeholder="Entrez votre nom complet" >
+            </div>
+
+            <div class="box">
+                <label for="email" id="email-label">Adresse email</label><br>
+                <input type="email" id="email" name="email" placeholder="Entrez votre adresse email">
+            </div>
+
+            <div class="box">
+                <label for="plan">Choisissez votre formule</label><br>
+                <select id="plan" name="plan">
+                    <option value="">-- Sélectionnez une formule --</option>
+                    <option value="basic">Basique - 2 €/mois</option>
+                    <option value="standard">Standard - 15.99 €/mois</option>
+                    <option value="premium">Premium - 19.99 €/mois</option>
+                </select>
+            </div>
+
+            <div class="box">
+                <label for="card-number">Numéro de carte</label><br>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" pattern="\d{16}">
+            </div>
+
+            <div class="box">
+                <label for="expiry">Date d'expiration</label><br>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/AA" pattern="\d{2}/\d{2}">
+            </div>
+
+            <div class="box">
+                <label for="cvv">Cryptogramme (CVV)</label><br>
+                <input type="text" id="cvv" name="cvv" placeholder="123" pattern="\d{3}">
+            </div>
+
+            <div class="box">
+                <label>
+                    <input type="checkbox"> J'accepte les <a href="#">conditions générales</a>
+                </label>
+            </div>
+
+            <button type="submit" id="submit" target="_blank">S'abonner maintenant</button>
+
+        </form>
+    </div>
+    <script>
+        // Rickroll à l'envoi du formulaire
+        document.getElementById("subscription-form").addEventListener("submit", function(e) {
+          e.preventDefault();
+          window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+          localStorage.setItem("rickrolled", "true"); // On note que le Rickroll a eu lieu
+        });
+      
+        // Message quand il revient sur la page
+        document.addEventListener("visibilitychange", function() {
+          if (document.visibilityState === "visible" && localStorage.getItem("rickrolled") === "true") {
+            alert("💀 Tu as échoué au test de phishing... sois plus vigilant la prochaine fois !\n N'appuie jamais sur un lien ou un bouton sans savoir vers quoi il dirige et si la source n'est pas fiable !");
+            localStorage.removeItem("rickrolled"); // On enlève pour éviter les messages en boucle
+          }
+        });
+    </script>
+</body>
+</html>
