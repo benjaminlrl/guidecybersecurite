@@ -552,6 +552,25 @@ function App() {
             </a>
           </div>
         </section>
+        {/* Iframe vidéo ytb */}
+        <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">🎥 Vidéo explicative</h2>
+          <p className="text-lg mb-8">
+            La sécurité numérique, ça se prépare - les fuites de données
+          </p>
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              className="w-full h-full rounded-xl shadow-xl"
+              src="https://youtu.be/VyNNjRN8Es4?si=kHGX2DZ3R-XoHFgc"
+              title="Cybersecurité Vidéo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
         {/* Outils utiles */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6 flex items-center text-gray-800">
@@ -605,26 +624,7 @@ function App() {
               <p className="text-indigo-800">Connaitre la robustesse de mon mot de passe</p>
             </a>            
           </div>
-        </section>
-        {/* Iframe vidéo ytb */}
-        <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">🎥 Vidéo explicative</h2>
-          <p className="text-lg mb-8">
-            La sécurité numérique, ça se prépare - les fuites de données
-          </p>
-          <div className="aspect-w-16 aspect-h-9">
-            <iframe
-              className="w-full h-full rounded-xl shadow-xl"
-              src="https://youtu.be/VyNNjRN8Es4?si=kHGX2DZ3R-XoHFgc"
-              title="Cybersecurité Vidéo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
+        </section>        
       </div>
     </div>
   );
